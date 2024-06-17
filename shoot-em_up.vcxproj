@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\include\Entities\Aircraft.cpp" />
+    <ClCompile Include="src\include\Entities\Entity.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\include\Entities\Aircraft.h" />
+    <ClInclude Include="src\include\Entities\Entity.h" />
     <ClInclude Include="src\include\Resources\ResourceHolder.hpp" />
   </ItemGroup>
   <ItemGroup>

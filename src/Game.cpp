@@ -8,10 +8,9 @@ mIsMovingUp(false),
 mIsMovingRight(false),
 mIsMovingLeft(false),
 mSpeed(150.f)
-
 {
-	this->loadFonts(); //loads fonts
-	this->loadTextures(); //loads textures
+	this->loadFonts(); 
+	this->loadTextures();
 
 	//------ fps ------// 
 	this->mFPS.setFont(this->mFonts.get(Fonts::ArcadeClassic));
@@ -63,7 +62,7 @@ void Game::loadFonts()
 
 void Game::loadTextures()
 {
-	this->mTextures.load(Textures::Airplane, "assets/spritesheets/ship.png");
+	this->mTextures.load(Textures::Airplane, "assets/spritesheets/pewpew.png");
 }
 
 void Game::handleInput(sf::Keyboard::Key key, bool isPressed)
