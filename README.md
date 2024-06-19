@@ -8,9 +8,7 @@ ___
 **Links for the assets:**
 <br> 
 Fonts : https://www.1001fonts.com/arcadeclassic-font.html
-<br>
+<br><br>
 Textures:
-<br>
 1. https://ansimuz.itch.io/spaceship-shooter-environment
-<br>
 2. https://grafxkid.itch.io/mini-pixel-pack-3
