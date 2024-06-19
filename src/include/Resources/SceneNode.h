@@ -1,0 +1,41 @@
+#pragma once
+#include <SFML/Graphics.hpp>
+#include <memory>
+#include <vector>
+#include <cassert>
+
+class SceneNode : public sf::Transformable, 
+	public sf::Drawable, 
+	public sf::NonCopyable
+{
+public:
+	typedef std::unique_ptr<SceneNode> Ptr;
+
+	void attachChild(Ptr child);
+	Ptr detachChild(const SceneNode& node);
+
+	
+
+
+public:
+	SceneNode();
+
+	void update(sf::Time dt);
+
+private:
+	std::vector<Ptr> mChildren;
+	SceneNode* mParent;
+
+private: 
+	
+	virtual sf::Transform getWorldTransform() const;
+	virtual sf::Vector2f getWorldPosition() const;
+
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	virtual void updateCurrent(sf::Time dt);
+	void updateChildren(sf::Time dt);
+
+};
+
