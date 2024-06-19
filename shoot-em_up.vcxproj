@@ -22,6 +22,7 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\include\Entities\Aircraft.cpp" />
     <ClCompile Include="src\include\Entities\Entity.cpp" />
+    <ClCompile Include="src\include\Resources\SceneNode.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="src\include\Entities\Aircraft.h" />
     <ClInclude Include="src\include\Entities\Entity.h" />
     <ClInclude Include="src\include\Resources\ResourceHolder.hpp" />
+    <ClInclude Include="src\include\Resources\SceneNode.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\include\Resources\ResourceHolder.inl" />

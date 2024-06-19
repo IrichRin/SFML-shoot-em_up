@@ -1,6 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "include/Resources/ResourceHolder.hpp"
+#include "include/Resources/SceneNode.h"
+
+//Entities
+#include "include/Entities/Aircraft.h"
 
 class Game
 {
@@ -16,17 +20,16 @@ private:
 
 	sf::RenderWindow mWindow;
 
+	
+
 	//fps 
 	sf::Text mFPS; 
 
 	//player elements
-	sf::Sprite mPlayer;
-
 	bool mIsMovingUp; 
 	bool mIsMovingDown;
 	bool mIsMovingLeft;
 	bool mIsMovingRight;
-
 	float mSpeed; 
 
 private:

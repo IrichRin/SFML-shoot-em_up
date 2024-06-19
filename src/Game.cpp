@@ -2,30 +2,23 @@
 
 Game::Game()
 : mWindow(sf::VideoMode(400, 300), "shoot-em up"),
-mPlayer(),
 mIsMovingDown(false), 
 mIsMovingUp(false),
 mIsMovingRight(false),
 mIsMovingLeft(false),
 mSpeed(150.f)
 {
-	this->loadFonts(); 
-	this->loadTextures();
-
+	loadTextures();
+	loadFonts(); 
+	
+	Aircraft player(Aircraft::red, this->mTextures);
+	player.setPosition(30, 30);
+	
 	//------ fps ------// 
 	this->mFPS.setFont(this->mFonts.get(Fonts::ArcadeClassic));
 	this->mFPS.setPosition(sf::Vector2f(0, 0));
 	this->mFPS.setCharacterSize(12);
 
-	//------ player ------//
-	sf::Vector2u textureSize = this->mTextures.get(Textures::Airplane).getSize();
-	textureSize.x /= 5; 
-	textureSize.y /= 2; 
-
-	this->mPlayer.setTexture(this->mTextures.get(Textures::Airplane));
-	this->mPlayer.setTextureRect(sf::IntRect(textureSize.x * 3, textureSize.y * 1, textureSize.x, textureSize.y));
-	this->mPlayer.setPosition(sf::Vector2f(200, 250));
-	
 }
 
 Game::~Game()
@@ -62,7 +55,8 @@ void Game::loadFonts()
 
 void Game::loadTextures()
 {
-	this->mTextures.load(Textures::Airplane, "assets/spritesheets/pewpew.png");
+	this->mTextures.load(Textures::red, "assets/spritesheets/red.png");
+	this->mTextures.load(Textures::pewpew, "assets/spritesheets/pewpew.png");
 }
 
 void Game::handleInput(sf::Keyboard::Key key, bool isPressed)
@@ -110,13 +104,12 @@ void Game::update(sf::Time delta)
 	if (this->mIsMovingRight)
 		movement.x += this->mSpeed;
 
-	this->mPlayer.move(movement * delta.asSeconds());
+	
 }
 
 void Game::render()
 {
-	mWindow.clear(sf::Color(0, 0, 0, 255));
-	mWindow.draw(this->mFPS);
-	mWindow.draw(this->mPlayer);
-	mWindow.display();
+	this->mWindow.clear(sf::Color(0, 0, 0, 255));
+	this->mWindow.draw(this->mFPS);
+	this->mWindow.display();
 }
