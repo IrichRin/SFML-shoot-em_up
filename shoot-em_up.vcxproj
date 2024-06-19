@@ -23,7 +23,9 @@
     <ClCompile Include="src\include\Entities\Aircraft.cpp" />
     <ClCompile Include="src\include\Entities\Entity.cpp" />
     <ClCompile Include="src\include\Resources\SceneNode.cpp" />
+    <ClCompile Include="src\include\Resources\SpriteNode.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
@@ -31,6 +33,8 @@
     <ClInclude Include="src\include\Entities\Entity.h" />
     <ClInclude Include="src\include\Resources\ResourceHolder.hpp" />
     <ClInclude Include="src\include\Resources\SceneNode.h" />
+    <ClInclude Include="src\include\Resources\SpriteNode.h" />
+    <ClInclude Include="src\World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\include\Resources\ResourceHolder.inl" />

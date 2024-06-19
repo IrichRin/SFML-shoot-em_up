@@ -1,6 +1,5 @@
 #pragma once
 #include "../Resources/SceneNode.h"
-#include <SFML/Graphics.hpp>
 
 //base class for entities
 

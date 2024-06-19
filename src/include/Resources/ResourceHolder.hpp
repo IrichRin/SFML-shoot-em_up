@@ -7,7 +7,8 @@
 namespace Textures {
 	enum ID {
 		red,
-		pewpew
+		pewpew,
+		Desert
 	};
 }
 

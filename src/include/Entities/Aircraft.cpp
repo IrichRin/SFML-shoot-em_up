@@ -20,6 +20,17 @@ Aircraft::Aircraft(Type type, TextureHolder& textures)
 	: mType(type),
 	mSprite(textures.get(toTextureID(type)))
 {
+	sf::Texture texture = textures.get(toTextureID(type));
+	sf::Vector2u textureSize = texture.getSize();
+
+	int temp = (type == Aircraft::Type::red) ? 24 : 16;
+	int textX = textureSize.x / 16, textY = textureSize.y / temp;
+
+	textureSize.x /= textX;
+	textureSize.y /= textY;
+
+	this->mSprite.setTextureRect(sf::IntRect(textureSize.x * 0, textureSize.y * 0, textureSize.x, textureSize.y));
+
 	sf::FloatRect bounds = mSprite.getLocalBounds();
 	this->mSprite.setOrigin(bounds.width / 2.f, bounds.height / 2.f);
 }
@@ -28,3 +39,5 @@ void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) co
 {
 	target.draw(this->mSprite, states);
 }
+
+

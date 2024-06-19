@@ -21,6 +21,10 @@ Ptr SceneNode::detachChild(const SceneNode& node)
 	return result;
 }
 
+SceneNode::SceneNode()
+{
+}
+
 void SceneNode::update(sf::Time dt)
 {
 	updateCurrent(dt);
@@ -33,7 +37,7 @@ sf::Transform SceneNode::getWorldTransform() const
 {
 	sf::Transform transform = sf::Transform::Identity; 
 
-	for (const SceneNode* node = this; node != nullptr; node = node->parent)
+	for (const SceneNode* node = this; node != nullptr; node = node->mParent)
 		transform = node->getTransform() * transform; 
 
 	return transform; 
@@ -63,6 +67,7 @@ void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) c
 
 void SceneNode::updateCurrent(sf::Time dt)
 {
+
 }
 
 void SceneNode::updateChildren(sf::Time dt)

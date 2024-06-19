@@ -14,8 +14,6 @@ public:
 	void attachChild(Ptr child);
 	Ptr detachChild(const SceneNode& node);
 
-	
-
 
 public:
 	SceneNode();

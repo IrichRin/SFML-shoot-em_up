@@ -3,6 +3,8 @@
 #include "include/Resources/ResourceHolder.hpp"
 #include "include/Resources/SceneNode.h"
 
+#include "World.h"
+
 //Entities
 #include "include/Entities/Aircraft.h"
 
@@ -20,21 +22,9 @@ private:
 
 	sf::RenderWindow mWindow;
 
-	
-
-	//fps 
-	sf::Text mFPS; 
-
-	//player elements
-	bool mIsMovingUp; 
-	bool mIsMovingDown;
-	bool mIsMovingLeft;
-	bool mIsMovingRight;
-	float mSpeed; 
+	World mWorld; 
 
 private:
-	void loadFonts();
-	void loadTextures();
 
 	void handleInput(sf::Keyboard::Key key, bool isPressed);
 
