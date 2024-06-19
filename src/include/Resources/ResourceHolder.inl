@@ -1,6 +1,6 @@
 #pragma once
 #include "ResourceHolder.hpp"
-#include <cassert>
+
 
 //remove assert operations upon release 
 

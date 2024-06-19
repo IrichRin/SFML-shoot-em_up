@@ -1,9 +1,10 @@
 #pragma once
+#include "../Resources/SceneNode.h"
 #include <SFML/Graphics.hpp>
 
 //base class for entities
 
-class Entity
+class Entity : public SceneNode
 {
 public: 
 	void setVelocity(sf::Vector2f velocity);
@@ -13,5 +14,9 @@ public:
 
 private: 
 	sf::Vector2f mVelocity;
+
+private: 
+	virtual void updateCurrent(sf::Time dt);
+	
 };
 
