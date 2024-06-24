@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "../Resources/ResourceHolder.hpp"
 
-
+#include <SFML/Graphics.hpp>
 
 class Aircraft : public Entity
 {
@@ -16,6 +16,7 @@ public:
 
 public:
 	explicit Aircraft(Type type, TextureHolder& textures);
+	virtual unsigned int getCategory() const;
 	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const; 
 
 private: 

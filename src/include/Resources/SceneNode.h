@@ -1,8 +1,16 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/Transformable.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+
 #include <memory>
 #include <vector>
-#include <cassert>
+
+#include "../Input/Categories.hpp"
+
+struct Command;
 
 class SceneNode : public sf::Transformable, 
 	public sf::Drawable, 
@@ -11,14 +19,16 @@ class SceneNode : public sf::Transformable,
 public:
 	typedef std::unique_ptr<SceneNode> Ptr;
 
-	void attachChild(Ptr child);
-	Ptr detachChild(const SceneNode& node);
-
-
 public:
 	SceneNode();
 
+	void attachChild(Ptr child);
+	Ptr detachChild(const SceneNode& node);
+
 	void update(sf::Time dt);
+
+	virtual unsigned int getCategory() const;
+	void onCommand(const Command& command, sf::Time dt);
 
 private:
 	std::vector<Ptr> mChildren;

@@ -1,7 +1,7 @@
-#include "Game.h"
+	#include "include/Game/Game.h"
 
 Game::Game()
-	: mWindow(sf::VideoMode(350, 300), "shoot-em up"),
+	: mWindow(sf::VideoMode(256, 300), "shoot-em up"),
 	mWorld(mWindow)
 {
 
@@ -19,44 +19,39 @@ void Game::run()
 	
 	while (mWindow.isOpen())
 	{
-		pollEvent();
+		
 		timeSinceLastUpdate += clock.restart();
 		while(timeSinceLastUpdate > sf::seconds(1.f/144.f))
 		{
 			timeSinceLastUpdate -= sf::seconds(1.f/144.f);
-			pollEvent();
+
+			processInput();
 			update(sf::seconds(1.f/144.f));
 		}
 		render();
 	}
 }
 
-
-void Game::handleInput(sf::Keyboard::Key key, bool isPressed)
-{
-
-}
-
 //----PRIVATE FUNCTIONS----//
-void Game::pollEvent()
+
+void Game::processInput()
 {
-	sf::Event ev;
+	CommandQueue& commands = mWorld.getCommandQueue();
+
+	sf::Event ev; 
 	while (mWindow.pollEvent(ev))
 	{
-		switch (ev.type)
-		{
-		case sf::Event::Closed:
+		mPlayer.handleEvent(ev, commands);
+
+		if (ev.type == sf::Event::Closed)
 			mWindow.close();
-			break;
-		case sf::Event::KeyPressed:
-			handleInput(ev.key.code, true);
-			break;
-		case sf::Event::KeyReleased:
-			handleInput(ev.key.code, false);
-			break;
-		}
+		if (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)
+			mWindow.close();
 	}
+
+	mPlayer.handleRealtimeInput(commands);
 }
+
 
 void Game::update(sf::Time delta)
 {

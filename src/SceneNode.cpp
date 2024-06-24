@@ -1,4 +1,7 @@
-#include "SceneNode.h"
+#include "include/Resources/SceneNode.h"
+#include "include/Input/Command.h"
+
+#include <cassert>
 
 typedef std::unique_ptr<SceneNode> Ptr;
 
@@ -6,6 +9,20 @@ void SceneNode::attachChild(Ptr child)
 {
 	child->mParent = this; 
 	this->mChildren.push_back(std::move(child));
+}
+
+unsigned int SceneNode::getCategory() const
+{
+	return Category::Scene;
+}
+
+void SceneNode::onCommand(const Command& command, sf::Time dt)
+{
+	if (command.category & this->getCategory())
+		command.action(*this, dt);
+
+	for (Ptr& child : mChildren)
+		child->onCommand(command, dt);
 }
 
 Ptr SceneNode::detachChild(const SceneNode& node)

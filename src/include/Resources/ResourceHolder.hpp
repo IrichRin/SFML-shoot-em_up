@@ -1,8 +1,10 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+
+#include <string>
 #include <map>
 #include <memory>
 #include <cassert>
+#include <stdexcept>
 
 namespace Textures {
 	enum ID {
@@ -38,6 +40,7 @@ private:
 
 };
 
+#include <SFML/Graphics/Texture.hpp>;
 
 typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,25 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\include\Entities\Aircraft.cpp" />
-    <ClCompile Include="src\include\Entities\Entity.cpp" />
-    <ClCompile Include="src\include\Resources\SceneNode.cpp" />
-    <ClCompile Include="src\include\Resources\SpriteNode.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\World.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\include\Entities\Aircraft.h" />
     <ClInclude Include="src\include\Entities\Entity.h" />
+    <ClInclude Include="src\include\Entities\Player.h" />
+    <ClInclude Include="src\include\Game\Game.h" />
+    <ClInclude Include="src\include\Game\World.h" />
+    <ClInclude Include="src\include\Input\Categories.hpp" />
+    <ClInclude Include="src\include\Input\Command.h" />
+    <ClInclude Include="src\include\Input\CommandQueue.h" />
     <ClInclude Include="src\include\Resources\ResourceHolder.hpp" />
     <ClInclude Include="src\include\Resources\SceneNode.h" />
     <ClInclude Include="src\include\Resources\SpriteNode.h" />
-    <ClInclude Include="src\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\include\Resources\ResourceHolder.inl" />
+    <ClCompile Include="src\Aircraft.cpp" />
+    <ClCompile Include="src\Command.cpp" />
+    <ClCompile Include="src\CommandQueue.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\SceneNode.cpp" />
+    <ClCompile Include="src\SpriteNode.cpp" />
+    <ClCompile Include="src\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ResourceHolder.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -1,12 +1,18 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "include/Resources/ResourceHolder.hpp"
-#include "include/Resources/SceneNode.h"
+
+#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+
+#include "../Resources/ResourceHolder.hpp"
+#include "../Resources/SceneNode.h"
 
 #include "World.h"
 
 //Entities
 #include "include/Entities/Aircraft.h"
+#include "include/Entities/Player.h"
 
 class Game
 {
@@ -23,12 +29,12 @@ private:
 	sf::RenderWindow mWindow;
 
 	World mWorld; 
+	Player mPlayer;
 
 private:
 
-	void handleInput(sf::Keyboard::Key key, bool isPressed);
+	void processInput();
 
-	void pollEvent();
 	void update(sf::Time delta);
 	void render();
 
