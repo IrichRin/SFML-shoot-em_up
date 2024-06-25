@@ -1,4 +1,4 @@
-#include "include/Game/World.h"
+#include "../include/Game/World.h"
 
 World::World(sf::RenderWindow& window)
 	: mWindow(window),

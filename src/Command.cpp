@@ -1,4 +1,4 @@
-#include "include/Input/Command.h"
+#include "../include/Input/Command.h"
 
 Command::Command()
 	: action(),

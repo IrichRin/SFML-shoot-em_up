@@ -1,5 +1,5 @@
-#include "include/Resources/SceneNode.h"
-#include "include/Input/Command.h"
+#include "../include/Resources/SceneNode.h"
+#include "../include/Input/Command.h"
 
 #include <cassert>
 

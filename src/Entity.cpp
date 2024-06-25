@@ -1,4 +1,4 @@
-#include "include/Entities/Entity.h"
+#include "../include/Entities/Entity.h"
 
 void Entity::setVelocity(sf::Vector2f velocity)
 {

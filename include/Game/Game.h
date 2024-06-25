@@ -11,8 +11,8 @@
 #include "World.h"
 
 //Entities
-#include "include/Entities/Aircraft.h"
-#include "include/Entities/Player.h"
+#include "../Entities/Aircraft.h"
+#include "../Entities/Player.h"
 
 class Game
 {

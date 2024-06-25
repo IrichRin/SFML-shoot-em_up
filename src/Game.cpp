@@ -1,4 +1,4 @@
-	#include "include/Game/Game.h"
+	#include "../include/Game/Game.h"
 
 Game::Game()
 	: mWindow(sf::VideoMode(256, 300), "shoot-em up"),
