@@ -1,5 +1,7 @@
 #pragma once
 #include "../Resources/ResourceHolder.hpp"
+#include "../Resources/ResourceIdentifier.hpp"
+
 #include "../Resources/SceneNode.h"
 #include "../Resources/SpriteNode.h"
 #include "../Entities/Aircraft.h"

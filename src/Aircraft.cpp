@@ -1,4 +1,5 @@
 #include "../include/Entities/Aircraft.h"
+#include "../include/Resources/ResourceHolder.hpp"
 
 Textures::ID toTextureID(Aircraft::Type type)
 {

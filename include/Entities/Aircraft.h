@@ -1,6 +1,6 @@
 #pragma once
 #include "Entity.h"
-#include "../Resources/ResourceHolder.hpp"
+#include "../Resources/ResourceIdentifier.hpp"
 
 #include <SFML/Graphics.hpp>
 

@@ -19,32 +19,53 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\Resources\Utility.cpp" />
     <ClCompile Include="src\Aircraft.cpp" />
+    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Command.cpp" />
     <ClCompile Include="src\CommandQueue.cpp" />
     <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameState.cpp" />
+    <ClCompile Include="src\LoadingState.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MenuState.cpp" />
+    <ClCompile Include="src\ParallelTask.cpp" />
+    <ClCompile Include="src\PauseState.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SceneNode.cpp" />
     <ClCompile Include="src\SpriteNode.cpp" />
+    <ClCompile Include="src\State.cpp" />
+    <ClCompile Include="src\StateStack.cpp" />
+    <ClCompile Include="src\TitleState.cpp" />
     <ClCompile Include="src\World.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\ResourceHolder.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Entities\Aircraft.h" />
     <ClInclude Include="include\Entities\Entity.h" />
     <ClInclude Include="include\Entities\Player.h" />
-    <ClInclude Include="include\Game\Game.h" />
+    <ClInclude Include="include\Game\Application.h" />
     <ClInclude Include="include\Game\World.h" />
     <ClInclude Include="include\Input\Categories.hpp" />
     <ClInclude Include="include\Input\Command.h" />
     <ClInclude Include="include\Input\CommandQueue.h" />
     <ClInclude Include="include\Resources\ResourceHolder.hpp" />
+    <ClInclude Include="include\Resources\ResourceIdentifier.hpp" />
     <ClInclude Include="include\Resources\SceneNode.h" />
     <ClInclude Include="include\Resources\SpriteNode.h" />
+    <ClInclude Include="include\Resources\Utility.hpp" />
+    <ClInclude Include="include\States\GameState.h" />
+    <ClInclude Include="include\States\LoadingState.h" />
+    <ClInclude Include="include\States\MenuState.h" />
+    <ClInclude Include="include\States\ParallelTask.h" />
+    <ClInclude Include="include\States\PauseState.h" />
+    <ClInclude Include="include\States\State.h" />
+    <ClInclude Include="include\States\StateIdentifiers.hpp" />
+    <ClInclude Include="include\States\StateStack.h" />
+    <ClInclude Include="include\States\TitleState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\Resources\ResourceHolder.inl" />
+    <None Include="include\Resources\Utility.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
